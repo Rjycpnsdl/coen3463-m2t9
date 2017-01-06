@@ -1,0 +1,45 @@
+extends layout
+
+block content
+ section.hero.is-primary.is-large.header-image
+      .hero-head
+        header.nav
+          .container
+            .nav-left
+              a.nav-item(href='/')
+                img(src='images/batyanichay.png', alt='logo')
+            span.nav-toggle
+              span
+              span
+              span
+            .nav-right.nav-menu
+              a.nav-item.is-active(href='/')
+                | Home
+              a.nav-item(href='/contact')
+                | Contact Us			
+      .hero-body
+        .container.has-text-centered
+          form(method='post', action='contact/send')
+            h1.title.is-1 Contact
+            br
+            br
+            h2.title.is-5 Name
+            p.control
+              input.input(type='text',name='name' placeholder='Enter Name')
+            h2.title.is-5 Email
+            p.control.has-icon.has-icon-right
+              input.input.is-success(type='text', name='email', placeholder='Enter Email')
+            h2.title.is-5 Message
+            p.control
+              textarea.textarea(name='message', placeholder='Enter Message...')
+            p.control
+              button.button.is-primary(type='submit') Submit
+    footer.footer
+      .container
+        .content.has-text-centered
+          p
+            strong BATYA NI CHAY
+            |  © 2017 BATYA NI CHAY'S LAUNDY SERVICES PHILIPPINES. ALL RIGHTS RESERVED. 
+          p
+            img(src='images/batyanichay.png', alt='logo')
+    script(async='', type='text/javascript', src='javascripts/bulma.js')

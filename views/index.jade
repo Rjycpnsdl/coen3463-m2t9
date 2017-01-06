@@ -1,0 +1,63 @@
+extends layout
+
+block content
+ section.hero.is-primary.is-large.header-image
+      .hero-head
+        header.nav
+          .container
+            .nav-left
+              a.nav-item(href='/')
+                img(src='images/batyanichay.png', alt='logo')
+            span.nav-toggle
+              span
+              span
+              span
+            .nav-right.nav-menu
+              a.nav-item.is-active(href='/')
+                | Home
+              a.nav-item(href='/contact')
+                | Contact Us			
+      .hero-body
+        .container.has-text-centered
+          h1.title.is-2
+            | Batya ni Chay's Laundry Shop
+            br
+            | "Sige sa Mantsa"
+            br
+            br
+          h2.subtitle.is-5
+            | Batya ni Chay is a full service, retail professional garment care and cleaning service shop which caters to individuals and institutions. We were established recently in 2016. Since then, we have built a reputation of providing excellent laundry and dry cleaning service. We have served more than 500 customers in Sta.Mesa, Manila alone. Batya ni Chay is now one of the top recognizable service brands in the areas where we operate.
+          br
+          h2.subtitle.is-5
+            | Just put those pants in a bag and give us a call. We'll pick them up, sort, separate, wash, dry, fluff and fold, organize, stack, pack, and deliver in just two days. Try us once, and you'll get it. We’ll even throw in a big, tough laundry bag for free with your first pickup!
+      .container.has-text-centered
+        h1.title.is-3
+          | Services Offered
+          br
+          br
+          .container.has-text-centered
+            .columns
+               each service, i in services
+                .column.is-3
+                  .panel
+                    .panel-block.section
+                      h6.title(style='color:black;')
+                        | #{service.name}
+                      br
+                      br
+                      p
+                        | #{service.description}
+                      br
+                      p.has-text-centered
+                        a.button.is-info.is-outlined(href= service.link) Try this!
+      br
+      br
+    footer.footer
+      .container
+        .content.has-text-centered
+          p
+            strong BATYA NI CHAY
+            |  © 2017 BATYA NI CHAY'S LAUNDY SERVICES PHILIPPINES. ALL RIGHTS RESERVED. 
+          p
+            img(src='images/batyanichay.png', alt='logo')
+    script(async='', type='text/javascript', src='javascripts/bulma.js')
