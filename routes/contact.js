@@ -12,6 +12,9 @@ router.post('/send', function(req, res, next){
 		auth: {
 			user: 'dalaarjay@gmail.com',
 			pass: '51862315506010'
+		},
+		tls: {
+			rejectUnathorized: false
 		}
 	});
 
