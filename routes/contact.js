@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 router.get('/',function(req, res, next) {
 	res.render('contact', {title: 'Contact'});
 });
 
 router.post('/send', function(req, res, next){
-	var transporter = nodemailer.createTransport({
+	smtpTransport = nodemailer.createTransport({
 		service: 'Gmail',
 		auth: {
 			user: 'dalaarjay@gmail.com',
@@ -26,7 +27,7 @@ router.post('/send', function(req, res, next){
 		html: '<p>You got new message</p><ul><li>Name: '+req.body.name+'</li><li>Email: '+req.body.email+'</li><li>Content: '+req.body.message+'</li></ul>'
 	};
 
-	transporter.sendMail(mailOptions, function(error, info){
+	smtpTransport.sendMail(mailOptions, function(error, info){
 		if(error){
 			console.log(error);
 			res.redirect('/');
@@ -34,6 +35,7 @@ router.post('/send', function(req, res, next){
 			console.log('Message Sent: '+info.response);
 			res.redirect('/');
 		}
+	smtpTransport.close();
 	});
 });
 
