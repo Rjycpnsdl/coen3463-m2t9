@@ -12,7 +12,7 @@ router.post('/send', function(req, res, next){
 		service: 'Gmail',
 		auth: {
 			user: 'dalaarjay@gmail.com',
-			pass: '51862315506010'
+			pass: 'caponesdala'
 		},
 		tls: {
 			rejectUnathorized: false
@@ -33,7 +33,7 @@ router.post('/send', function(req, res, next){
 			res.redirect('/');
 		} else {
 			console.log('Message Sent: '+info.response);
-			res.redirect('/');
+			res.redirect('/contact');
 		}
 	smtpTransport.close();
 	});
