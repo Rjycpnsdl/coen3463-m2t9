@@ -11,8 +11,8 @@ router.post('/send', function(req, res, next){
 	smtpTransport = nodemailer.createTransport({
 		service: 'Gmail',
 		auth: {
-			user: 'dalaarjay@gmail.com',
-			pass: 'caponesdala'
+			user: 'archay30@gmail.com',
+			pass: '09302016'
 		},
 		tls: {
 			rejectUnathorized: false
